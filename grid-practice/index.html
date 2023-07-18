@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid [실습] 해보기</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr;
+            grid-template-rows: 2fr 1fr 2fr;
+            /* 행과 열 모두 2:1:2 비율로 6개의 cell 생성 */
+            grid-template-areas:
+                "a a b"
+                "c d b"
+                "e f f"
+            ;
+            gap: 10px;
+            /* 상자와 상자 간의 간격 설정 */
+            width: 700px;
+            height: 700px;
+        }
+
+        .item:nth-child(1) {
+            /* item class 중에서 첫번째 요소 선택 */
+            grid-area: a;
+            /* grid-areas에서 작성한 이름과 연결 */
+            background-color: royalblue;
+        }
+
+        .item:nth-child(2) {
+            grid-area: b;
+            background-color: gold;
+        }
+
+        .item:nth-child(3) {
+            grid-area: c;
+            background-color: purple;
+        }
+
+        .item:nth-child(4) {
+            grid-area: d;
+            background-color: orange;
+        }
+
+        .item:nth-child(5) {
+            grid-area: e;
+            background-color: salmon;
+        }
+
+        .item:nth-child(6) {
+            grid-area: f;
+            background-color: green;
+        }
+
+        /* grid-area로 위치를 지정해준다면 */
+        /* .item:nth-child(1) {
+                grid-area: 1/1/3/4;
+        } */
+        /* .item:nth-child(2) {
+                grid-area: 1/3/3/4;
+        } */
+        /* => 행의 시작/열의 시작/행의 끝/열의 끝 */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+
+</html>
