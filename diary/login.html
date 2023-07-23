@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 | 두근두근 비밀일기 (선생님버전..)</title>
+    <!-- 반복되는 큰 제목이 앞으로 가면 피로도가 높아지기 때문에 서부 제목을 앞에 적어줌 -->
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="max-width">
+            <h1><a href="./index.html">
+                    <img src=".//img/logo.svg" alt="두근두근 비밀일기">
+                </a>
+            </h1>
+            <a class="btn-join" href="./join.html">회원가입</a>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <!-- main -->
+    <main class="login max-width">
+        <h2 class="main-title">
+            <img src=".//img/logo.svg" alt="두근두근 비밀일기">
+            <strong>로그인</strong>
+            <!-- 굵은 글씨 적용을 위해 strong 태그 사용 -->
+        </h2>
+
+        <!-- form method="post"-->
+        <!-- 데이터를 전송하는 작업을 한다면 method="post"를 적어주어야 한다.-->
+        <form class="form">
+            <div>
+                <label for="user-email">이메일</label>
+                <input id="user-email" type="email">
+                <!-- for와 id로 연결 -->
+            </div>
+
+            <div>
+                <label for="user-pw">비밀번호</label>
+                <input id="user-pw" type="password">
+            </div>
+
+            <button type="submit">로그인</button>
+        </form>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+        <!-- footer에는 따로 max-width 적용을 안하는 이유: 
+                        어차피 가운데 정렬할 것이기 때문 -->
+        <p>Copyright 2023. WENIV All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+/* font --------------------------------------*/
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff')
+    format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+/* //font */
+
+
+/* reset --------------------------------------*/
+body {
+  margin: 0;
+}
+h1 {
+  margin:0;
+  padding:0;
+}
+img {
+  vertical-align: top;
+  /* 이미지는 인라인요소이기 때문에 baseline기준으로 정렬됨 */
+  /* 가운데 정렬을 위해 top으로 설정 */
+  /* 했을 때와 안했을때의 차이를 비교해보기 */
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+input,
+button {
+  font: inherit;
+}
+
+/* CSS 적용 --------------------------------------*/
+body {
+  font-family: "Pretendard-Regular", sans-serif;
+  background-color: #fffaf0;
+}
+
+.max-width {
+/* max-width를 header, main에 둘 다 쓰기 위해 따로 감싸고 따로 설정해주는 것 */
+  width: 1284px;
+  /* 모니터가 이 이상으로 커지면 여백으로 처리함 */
+  max-width: calc(100% - 60px) ; 
+  /* 뷰포트를 기준으로 100%를 넘지 않겠다 */
+  /* 화면이 줄어들었을 때 끝이 잘리는 현상을 해결 */
+  /* 좌우를 띄우기 위해 -60px 설정 */
+
+  margin: auto;
+  /* 화면이 줄거나 늘어도 가운데로 위치함 */
+}
+
+
+/* header --------------------------------------------*/
+.header {
+  background-color: #fff;
+  /* header에 배경 설정을 하는 이유 */
+  /* .max-width에다가 배경설정을 하면 header 양 옆 여백에도 body 배경 색이 적용된다. */
+}
+
+.header .max-width{
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  /* 로고와 회원가입 양 끝에 배치 */
+  align-items: center;
+  /* 세로 배치 설정  */
+}
+
+.header h1 {
+  width: 156px;
+}
+
+
+/* footer --------------------------------------------*/
+.footer {
+  text-align: center;
+  color: #677880;
+  font-size: 12px;
+}
+
+
+/* 버튼 --------------------------------------------*/
+.btn-join {
+  /* a태그는 인라인요소이기 때문에 width height 값을 가질 수 없음 */
+  /* 하지만 부모(header)에서 flex 속성을 적용하였기 때문에 현재는 적용 가능 */
+  display: inline-flex;
+  /* 유지보수(버튼을 다양한 곳에서 사용할 상황을 고려)를 고려하여 개별로 지정 */
+  /* inline-flex: flex속성을 가진 인라인 요소 ==> 글자를세로로 가운데 정렬하기 위함 */
+  /* inline이기 때문에 가로로 정렬되고, flex이기 때문에 align-items를 적용할 수 있음 */
+  height: 40px;
+  padding: 0 20px 0 42px;
+  background-color: #fff;
+  background-image: url(../img/icon-join.svg);
+  /* 이미지로 넣어도 되는데, 사진이 따로 작용하지는 않아도 되므로 back으로 넣음 */
+  /* --> 사용자한테 읽히지 않아도 되고, 이미지가 변경될 일이 없는 것 */
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: 10px 50%;
+  /* 사진 위치값 잡아주기 */
+  /* 설정 안하면 0 0이 기본값 */
+  /* 고정값이 아닌 %를 사용해서 유지보수, 반응성을 고려한 중앙위치 설정 (화면이 움직여도, 글자 수가 줄어도 가운데에 배치되도록*/
+  align-items: center;
+}
+
+
+/* 로그인 --------------------------------------------*/
+.login{ 
+  margin-top: 70px;
+}
+
+.main-title {
+  width: 250px;
+  margin: auto;
+  /* width값을 주어야 적용됨 */
+  text-align: center;
+}
+
+.main-title img {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+  /* 로그인 글자 사이와의 간격 조정 */
+}
+
+.main-title strong {
+  color: #29363d;
+  font-size: 24px;
+  font-family: 'Pretendard-Bold';
+  box-shadow: inset 0 -0.5em 0 rgb(225, 79, 110, 0.2) ;
+  /* 텍스트 안쪽으로 들어가는 그림자 설정 */
+  /* 0.5em: 원래 텍스트 높이의 반 */
+  /* 투명도 0.2 설정을 위해 색상을 rgb, 투명도로 설정 */
+  border-bottom: 2px solid #ff4f6e;
+}
+
+/* 로그인 form */
+.form {
+  width: 392px;
+  margin:40px auto 50px;
+  /* margin-top: 40px; 
+  margin-bottom: 50px;
+  좌우: auto(가운데 정렬 */
+}
+
+.form label {
+  display: block;
+  font-size: 14px;
+  color: #29363d;
+  margin-bottom: 8px;
+}
+
+.form input {
+  width: 100%;
+  /* 양옆으로 꽉 채움 */
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid #677880;
+  border-radius: 4px 4px 0 0 ;
+}
+
+.form>div {
+  margin-bottom: 24px;
+}
+
+.form button[type='submit'] {
+  width: 100%;
+  height: 48px;
+  border:0;
+  background-color: #29363d;
+  color: #f4f5f5;
+  font-size: 16px;
+  border-radius: 4px;
+}
